@@ -9,7 +9,7 @@ resources:
       
 jobs:  
   # First job: Package Application as a JAR and Upload to S3 Bucket for storage
-  - name: Build and test
+  - name: build & test
     plan:  
     # Check for new commit (trigger=true), 'code' refers to GIT resource
     - get: code  
@@ -37,4 +37,5 @@ jobs:
           args:
           - -c
           - |
-            mvn -f code/pom.xml clean install -Dmaven.repo.local=code/.m2
+            cd code
+            mvn clean install
