@@ -28,14 +28,14 @@ jobs:
           - name: code
         # 'build' folder is used to store file for next PUT step after RUN step
         outputs: 
-          - name: build
+          - name: code
         caches:
           - path: code/.m2
         # RUN step allows inline command and FILE step allows use of external task file
         run:
           path: sh
           args:
-          - -c
+          - -exc
           - |
-            cd code
-            mvn clean install
+             cd code
+             mvn clean install
