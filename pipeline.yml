@@ -37,6 +37,6 @@ jobs:
           args:
           - -exc
           - |
-             ls -la
+             ls -laR
 #             cd code
 #             mvn clean install
